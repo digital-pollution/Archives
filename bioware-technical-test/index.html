@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="jquery-ui-1.10.4.custom.css">
+        <link rel="stylesheet" href="styles.css">
+        <script src="jquery.js"></script>      
+		<script src="jquery-ui-1.10.4.custom.min.js"></script>
+    	<script src="scripts.js"></script>
+    	
+    	<!--[if IE]>
+<style>
+a#friend-count {
+	background-origin:content-box !important;
+	background-position-y: center;
+	padding: 0;
+	text-align: center;
+	line-height: 22px;
+}
+</style>
+<!--<![endif]-->
+    	
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->	
+		<div class="container">
+			<div id="messenger-btn">
+				<a href="#" id="friend-count"></a>
+			</div>
+			<div id="messenger">
+				<div class="messenger-header">
+					<div class="my-avatar">
+						<img src="img/digital-pollution-avatar.jpg" />
+					</div>
+					<h1>digital-pollution</h1>
+					<small>ONLINE</small>
+				</div>	
+				<div class="messenger-body">
+					<h3>online friends</h3>
+					<div class="online">
+						
+					</div>
+					<h3>offline friends</h3>
+					<div class="offline">
+						
+					</div>
+					<h3>open chats</h3>
+					<div class="open-chats">
+								
+					</div>
+					
+				</div>
+				<div class="footer">	
+					<button class="open-tools"></button>
+				</div>
+			</div>
+			<div class="tools">
+				<div class="chat-header">
+					<h2>Messenger Tools</h2>
+					<button class="close-btn">&times;</button>
+				</div>
+				<div class="create-friend">
+						<label>Friend name</label>
+						<input type="text" name="name"></input>
+						<div class="radio-group">
+							<input type="radio" name="form-status" value="online"/>
+							<label>online</label>
+							<input type="radio" name="form-status" value="offline"/>
+							<label>offline</label>
+						</div>
+						<label>Avatar URL</label>
+						<input type="text" name="avatar"></input>
+						<label>Response 1</label>
+						<input type="text" name="responseOne"></input>
+						<label>Response 2</label>
+						<input type="text" name="responseTwo"></input>
+						<label>Response 3</label>
+						<input type="text" name="responseThree"></input>
+						<div class="tool-actions">
+							<button id="create">Create</button>
+							<button id="edit">Edit</button>
+							<button id="delete">Delete</button>
+							<button id="cancel">Cancel</button>
+						</div>		
+					</div>
+					<div class="change-state">
+						<div class="state-list">
+						</div>
+					</div>
+				</div>
+		</div>		
+    </body>
+</html>

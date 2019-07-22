@@ -1,0 +1,58 @@
+<div id="tutorial-tips">
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <span>Getting Started with Magento 2 tips and tricks</span>
+        </div>
+    </div>
+    <div data-role="content">
+        <strong>Set the environment mode to developer</strong>
+        <p>When in developer mode magento will reference module files instead of the static content folder.<br />This way when you make changes will won't need to redeploy the static content folder to see the changes.</p>
+        <pre>bin/magento deploy:mode:set developer</pre>
+        
+        <strong>Find out where php templates are by turning on path hints</strong>
+        <pre>In the Admin: Store > Configuration > Advanced > Developer > Debug</pre>
+        
+        <strong>Turn off caching</strong>
+        <pre>In the Admin: System > Tools > Cache Management: turn off: Configuration, Layouts, Block HTML output and Page Cache</pre>
+        
+        <strong>Always extend, never modify</strong>
+        <pre>Modifying Magento core files will make future upgrades difficult. Start by creating a new theme.</pre>
+        
+        <strong>Use the LESS javascript compiler</strong>
+        <pre>
+Include less.js during development and it will compile your less files on the fly http://lesscss.org/#download-options
+make sure developer mode is turned on: bin/magento deploy:mode:set developer
+create a less file in your module and add the route to your layout xml as mylessfile.css 
+turn on client side LESS compilation: Admin > Stores > Configuration > Advanced > Developer > Frontend development workflow > Workflow Type
+add logging to less.config in lib > web > less > config.less.js : logLevel: 20
+refresh the page in your browser and you new less file will be compiled
+        </pre>
+        <p>As of writing Maengto 2 has a bug where an updated less file is not being regenerated, they have added a grunt task, but to get around this you can just delete the generated css files from:</p>
+        <pre>pub/static/yourtheme/yourchildtheme/yourlocale/css/yourcompiledcss.css</pre>
+    </div>
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <span>Useful Links</span>
+        </div>
+    </div>
+    <div data-role="content">
+        <ul>
+            <li><a href="http://www.magestore.com/magento-2-tutorial/how-to-write-a-page-using-magento-2-knockout-js/">Magestore's Magento 2 / Knockout tutorial</a></li>
+            <li><a href="http://devdocs.magento.com/guides/v2.0/coding-standards/code-standard-javascript.html">Magento 2 Javascript Standards</a></li>
+            <li><a href="http://devdocs.magento.com/guides/v2.0/javascript-dev-guide/widgets/jquery-widgets-about.html">Magento 2 jQuery widget library</a></li>
+            <li><a href="http://knockoutjs.com/">Knockout JS documentation</a></li>
+            <li><a href="http://www.venustheme.com/theme/ves-yume-free-magento-2-theme/">Yume - A free responsive theme makes a good starting point</a></li>
+            <li><a href="https://venustheme.ticksy.com/ticket/848217/">Yume - 2.1 patch</a></li>
+            <li><a href="http://lesscss.org/#download-options">Less Javascript compiler</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'tabs'], function ($) {
+        $("#tutorial-tips").accordion();
+    });
+</script>
+

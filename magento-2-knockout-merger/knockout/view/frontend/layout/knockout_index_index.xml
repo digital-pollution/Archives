@@ -1,0 +1,26 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" layout="1column">
+    <head>
+        <css src="demo_knockout::css/demo.css" />
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="demo\knockout\Block\knockout" name="knockout" template="knockout.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="product-list" xsi:type="array">
+                                <item name="component" xsi:type="string">demo_knockout/js/demoController</item>
+                                <item name="config" xsi:type="array">
+                                    <item name="template" xsi:type="string">demo_knockout/demo</item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+                <block class="Magento\Framework\View\Element\Template" name="tutorial" template="demo_knockout::tutorial.phtml"></block>
+            </block>
+        </referenceContainer>
+
+        
+    </body>
+</page>

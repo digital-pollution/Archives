@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Knockout Demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="js/vendor/bootstrap/stylesheets/_bootstrap.css">
+        <script src="js/vendor/jquery.js"></script>
+        <script src="js/vendor/knockout.js"></script>
+        <script src="js/vendor/bootstrap/javascripts/bootstrap.min.js"></script>
+        <script src="js/vendor/bootstrap/javascripts/knockstrap.min.js"></script>
+        <script src="js/vendor/require.js"></script>
+        <script src="js/appController.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron">
+                        <h1>Knockout Basics</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Basic viewModels / Publish Subscribe</h2>
+                </div>
+                <div class="col-md-4" data-bind="with: firstNameViewModel">
+                    <div class="form-group">
+                        <label for="fname">First Name</label>
+                        <input type="text" data-bind="value: firstName, valueUpdate:'afterkeydown'" class="form-control" id="fname" placeholder="First Name">
+                        <br />
+                        <p><strong>Output: </strong><span data-bind="text: firstName" id="fnameOutput"></span></p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-bind="with: lastNameViewModel">
+                    <div class="form-group">
+                        <label for="lname">Last Name</label>
+                        <input type="text" data-bind="value: lastName, valueUpdate:'afterkeydown'" class="form-control" id="lname" placeholder="Last Name">
+                        <br />
+                        <p><strong>Output: </strong><span data-bind="text: lastName" id="lnameOutput"></span></p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-bind="with: fullNameViewModel">
+                    <label>Full Name</label>
+                    <br />
+                    <p data-bind="text: fullName"></p>
+                </div>
+            </div>
+            <div class="row" data-bind="with: fullNameViewModel">    
+                <div class="col-md-12">
+                    <h2>Extending Observables</h2>
+                </div>
+                <div class="col-md-6">
+                    <div class="alert alert-danger" role="alert" data-bind="visible: firstName.hasError, text: firstName.validationMessage"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="alert alert-danger" role="alert" data-bind="visible: lastName.hasError, text: lastName.validationMessage"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Unbinding / Rebinding viewModels</h2>    
+                </div>
+                <div class="col-md-6" data-bind="with: firstNameViewModel">
+                    <!-- ko if: bound -->
+                        <button class="btn btn-danger" data-bind="click: unbind">Unbind First Name</button>
+                    <!-- /ko -->
+                    <!-- ko ifnot: bound -->
+                        <button class="btn btn-success" data-bind="click: rebind">Bind First Name</button>
+                    <!-- /ko -->
+                </div>
+                <div class="col-md-6" data-bind="with: lastNameViewModel">
+                    <!-- ko if: bound() -->
+                        <button class="btn btn-danger" data-bind="click: unbind">Unbind Last Name</button>
+                    <!-- /ko -->
+                    <!-- ko ifnot: bound() -->
+                        <button class="btn btn-success" data-bind="click: rebind">Bind Last Name</button>
+                    <!-- /ko -->
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

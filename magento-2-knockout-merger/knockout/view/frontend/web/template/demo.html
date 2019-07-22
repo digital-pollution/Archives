@@ -1,0 +1,32 @@
+<div id="demoView">
+    <div id="select-category" data-bind="with: categoryViewModel">
+        <label>Select a product</label>
+        <select 
+            data-bind=" options: categories, 
+                        optionsText: 'name', 
+                        optionsValue: 'id', 
+                        value: category"></select>
+        <!--
+        <select data-bind="foreach: categories, value: category, optionsCaption: getCaption ">
+            <option data-bind="text: name, value: id"></option>
+        </select>
+        -->
+    </div>
+    
+    <div class="product-list" data-bind="with: productViewModel">
+        <!-- ko if: productList().length > 0 -->
+        <table data-bind="foreach: productList">
+            <tr>
+                <td data-bind="text: id"></td>
+                <td data-bind="text: name"></td>
+                <td data-bind="text: price"></td>
+            </tr>
+        </table>
+        <!-- /ko -->
+                
+        <!-- ko if: productList().length < 1 -->
+        <p>No Products found</p>
+        <!-- /ko -->
+    </div>
+</div>
+

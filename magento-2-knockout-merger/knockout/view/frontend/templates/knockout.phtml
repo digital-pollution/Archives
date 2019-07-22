@@ -1,0 +1,24 @@
+<h1><?php echo $this->pageTitle(); ?></h1>
+
+<div id="categories">
+    <div id="block-product-list" data-bind="scope:'product-list'" class="block">
+        <!-- ko template: getTemplate() --><!-- /ko -->
+        <script type="text/x-magento-init">
+            {
+                "#block-product-list": {
+                    "Magento_Ui/js/core/app": <?php /* @escapeNotVerified */ echo $block->getJsLayout();?>
+                }
+            }
+        </script>
+    </div>
+</div>
+
+<div id="tutorial">
+    <?php  
+        if($block->getChildHtml('tutorial')){
+           echo $block->getChildHtml('tutorial'); 
+        } else {
+            echo 'no block found';
+        }           
+    ?>
+</div>
