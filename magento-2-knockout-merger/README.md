@@ -1,4 +1,4 @@
-#### magedemo
+#### Magento 2.0 module starter kit
 
 A simple module that get a list of categories and returns the products of the selected category.
 This example makes using of Magento 2's jsonFactory and knockoutjs component/template.
